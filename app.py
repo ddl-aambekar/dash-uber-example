@@ -1,6 +1,6 @@
 import dash
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import dcc
+from dash import html
 import pandas as pd
 import numpy as np
 import os
@@ -11,8 +11,8 @@ from datetime import datetime as dt
 
 
 app = dash.Dash(
-    __name__, meta_tags=[{"name": "viewport", "content": "width=device-width"}],
-    'requests_pathname_prefix': '/{}/{}/r/notebookSession/{}/'.format(os.environ.get("DOMINO_PROJECT_OWNER"),os.environ.get("DOMINO_PROJECT_NAME"),os.environ.get("DOMINO_RUN_ID")),
+    __name__, meta_tags=[{"name": "viewport", "content": "width=device-width",
+    'requests_pathname_prefix': '/{}/{}/r/notebookSession/{}/'.format(os.environ.get("DOMINO_PROJECT_OWNER"),os.environ.get("DOMINO_PROJECT_NAME"),os.environ.get("DOMINO_RUN_ID")),}]
 )
 
 # app.config.update({'requests_pathname_prefix': '/{}/{}/r/notebookSession/{}/'.format(
