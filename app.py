@@ -12,12 +12,16 @@ from datetime import datetime as dt
 
 app = dash.Dash(
     __name__, meta_tags=[{"name": "viewport", "content": "width=device-width"}],
-)
-
-app.config.update({'requests_pathname_prefix': '/{}/{}/r/notebookSession/{}/'.format(
+    'requests_pathname_prefix': '/{}/{}/r/notebookSession/{}/'.format(
   os.environ.get("DOMINO_PROJECT_OWNER"),
   os.environ.get("DOMINO_PROJECT_NAME"),
-  os.environ.get("DOMINO_RUN_ID"))})
+  os.environ.get("DOMINO_RUN_ID"))
+)
+
+# app.config.update({'requests_pathname_prefix': '/{}/{}/r/notebookSession/{}/'.format(
+#   os.environ.get("DOMINO_PROJECT_OWNER"),
+#   os.environ.get("DOMINO_PROJECT_NAME"),
+#   os.environ.get("DOMINO_RUN_ID"))})
   
 app.title = "New York Uber Rides"
 server = app.server
