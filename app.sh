@@ -1,1 +1,1 @@
-python /mnt/code/app.py
+python /mnt/code/dash-table.py
